@@ -1,0 +1,16 @@
+.search-wrapper {
+  margin-left: 3rem;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  background-color: #fff;
+}
+
+.search-icon {
+  padding: .8rem;
+}
+
+.input-root {
+  width: 100%;
+}
