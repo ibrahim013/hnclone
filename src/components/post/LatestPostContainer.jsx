@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import withSpinner from '../spinner/WithSpinnerComponent';
+import WithSpinner from '../spinner/WithSpinnerComponent';
 import LatestPost from './LatestPost';
 
  
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const LatestPostContainer = compose(
   connect(mapStateToProps),
-  withSpinner
+  WithSpinner
 )(LatestPost)
 
 export default LatestPostContainer;

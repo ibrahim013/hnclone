@@ -1,22 +1,22 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
+import { ListItem, ListItemText, Typography, Container } from '@material-ui/core';
 
 function ListItemLink(props) {
-  return <ListItem component="a" {...props} />;
+  return <ListItem component="a" {...props}  disableGutters={true}/>;
 }
 
 function PostList({url, title, author, createdAt}) {
   return (
-    <> 
-    <ListItemLink href={url} target='_blanck'>
-      <ListItemText primary={title}  root="title"/>
-    </ListItemLink>
-    <div>
-      <Typography variant='body1'>Author:{author} | Date: {createdAt}</Typography>
-    </div>
-    </>
+    <Container> 
+      <ListItemLink href={url} target='_blanck'>
+        <ListItemText primary={title}  root="title"/>
+      </ListItemLink>
+      <div>
+        <Typography variant='body1'>
+          author: {author} | date: {new Date(createdAt).toLocaleString()}
+        </Typography>
+      </div>
+    </Container>
   )
 }
 

@@ -2,7 +2,7 @@ import { POST_TYPES } from './types';
 
 const INITIAL_STATE = {
   data: [],
-  isFetching: true
+  isFetching: true,
 }
 
 export default function latestPostReducer(state = INITIAL_STATE, action) {
@@ -15,7 +15,8 @@ export default function latestPostReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         data: state.data ? state.data.concat(action.payload.hits) : [...action.payload.hits],
-        isFetching: false
+        isFetching: false,
+        isFetchingNext: true
       }
     case POST_TYPES.SEARCH_POST_SUCESS:
       return {

@@ -1,21 +1,28 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import {
+  Hidden,
+  AppBar,
+  Toolbar,
+  Typography
+} from '@material-ui/core';
+
+import './HeaderStyle.css'
+
 import Search from '../Search/SearchComponent';
 
 function Header() {
   return (
-    <>
       <AppBar position="sticky">
         <Toolbar>
-          <Typography variant="h6" noWrap>
-            Hacker News Clone
-          </Typography>
+          <Typography variant="h4" classes={{root:'brand-logo'}}>H</Typography>
+          <Hidden mdDown={true}>
+            <Typography variant="h6" classes={{root:'brand-name'}}>
+              Hacker News Clone
+            </Typography>
+          </Hidden>
           <Search/>
         </Toolbar>
       </AppBar>
-    </>
   )
 }
 
